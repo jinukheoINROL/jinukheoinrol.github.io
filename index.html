@@ -122,10 +122,12 @@ h3 { margin: 0; font-size: 30px; line-height: 1.2; font-weight: 600; letter-spac
 .par > div { flex: 1 1 220px; min-width: 0; }
 h4 { margin: 0 0 6px; font-size: 15px; font-weight: 600; }
 .par p { margin: 0; font-size: 16px; }
+.mc { display: flex; flex-direction: column; gap: 6px; max-width: 40em; }
+.mc p { margin: 0; font-size: 16px; }
 .note { margin: 0; max-width: 40em; font-size: 16px; color: var(--muted); }
 .note strong { color: var(--text); font-weight: 600; }
 .facts { display: flex; flex-wrap: wrap; gap: 12px; }
-.fact { flex: 1 1 180px; padding: 14px 18px; border: 1px solid var(--rule); border-radius: 8px; }
+.fact { flex: 0 1 240px; padding: 14px 18px; border: 1px solid var(--rule); border-radius: 8px; }
 .fact p { margin: 0; }
 .fact .k { font-size: 14px; color: var(--muted); }
 .fact .v { margin-top: 2px; font-size: 16px; font-weight: 500; }
@@ -186,7 +188,7 @@ footer p { margin: 0; }
   <div class="hero-text">
     <h1>Jinuk Heo</h1>
     <p class="affil">Ph.D. candidate in Mechanical Engineering, Seoul National University<br>Interactive &amp; Networked Robotics Lab, advised by Prof. Dongjun Lee</p>
-    <p class="statement">I work on robot teleoperation that stays stable over unreliable networks. My thesis applies passivity-based control to robot‑arm teleoperation. It builds on years of hand tracking, finger-based interfaces, and interactive, contact-rich rigid‑body dynamics simulation for robots, swarms and VR.</p>
+    <p class="statement">I build passivity-based teleoperation that keeps robot arms stable over unreliable networks. This grows out of my earlier work on hand tracking, finger-based interfaces for robots and swarms, and interactive, contact-rich rigid‑body simulation in&nbsp;VR.</p>
     <p class="status">Expected to graduate in 2027. Open to research and engineering roles in robotics.</p>
     <nav class="links" aria-label="Profile links">
       <a class="pill primary" href="cv.pdf">CV (PDF)</a>
@@ -208,7 +210,7 @@ footer p { margin: 0; }
 <section aria-labelledby="research">
   <div class="section-head">
     <h2 id="research">Selected research</h2>
-    <p class="lede">Much of my earlier work runs on VIST, our lab’s visual-inertial hand tracker. Code belongs to the lab and isn’t public; the papers and videos show the results. I always welcome questions and conversations about this research.</p>
+    <p class="lede">These projects span teleoperation, hand-based interfaces for robots and swarms, interactive contact-rich simulation, and hand tracking. The code stays with the lab, so each project links to its paper and video instead. I’m always happy to talk about any of this work.</p>
   </div>
 
   <!-- 0. Thesis research (ongoing) -->
@@ -224,7 +226,10 @@ footer p { margin: 0; }
         <p class="paper-title">Keeping robot-arm teleoperation stable when packets arrive late, out of order, or not at all</p>
       </div>
       <div class="video-wide"><img src="media/thesis-teleop.jpg" alt="Teleoperation setup: operator view, operating station and worksite views" width="1280" height="548" loading="lazy"></div>
-      <p>Spring-damper (PD) coupling is a common way to connect a leader and a follower robot over a network, but its stability guarantees usually assume continuous time and robots with matching joints. My thesis derives closed-form passivity conditions for PD coupling in task space that hold under sampling and real packet behavior, including varying delay, loss, duplication and reordering, so that robot arms with different kinematics can be teleoperated stably. The conditions are validated with two 7-DoF manipulators over an emulated unreliable network.</p>
+      <div class="mc">
+        <p><strong>Motivation.</strong> PD (spring-damper) coupling is the standard way to link robots over a network, but its stability guarantees usually assume continuous time and robots with matching joints.</p>
+        <p><strong>Contribution.</strong> Closed-form passivity conditions in task space that hold under sampling, delay, packet loss, duplication and reordering, validated on two 7-DoF arms.</p>
+      </div>
     </div>
   </article>
 
@@ -241,26 +246,15 @@ footer p { margin: 0; }
         <p class="paper-title">Steering a swarm of 100+ robots with your fingers</p>
       </div>
       <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/YxUzck9DLKs" title="Finger-based 3D human-swarm interaction demo" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-      <div class="par">
-        <div>
-          <h4>Problem</h4>
-          <p>A large swarm has far more degrees of freedom than a joystick can express, and in 3D the operator quickly loses track of where the agents are.</p>
-        </div>
-        <div>
-          <h4>Approach</h4>
-          <p>A finger-tracking interface with three interaction methods (attraction, repulsion and relaxed mapping), plus auxiliary tools and viewpoint control, so finger dexterity maps directly to swarm behavior.</p>
-        </div>
-        <div>
-          <h4>Results</h4>
-          <p>Across pattern formation, exploration and navigation studies, it beat the baseline on both performance and workload, largely thanks to implicit viewpoint control. Macro-level performance held steady as the swarm grew.</p>
-        </div>
+      <div class="mc">
+        <p><strong>Motivation.</strong> Joysticks and 2D tablets cannot express the many degrees of freedom of a large 3D swarm.</p>
+        <p><strong>Contribution.</strong> A finger-tracking VR interface for steering 100+ agents, which outperformed the baseline on both performance and workload in human-subject studies.</p>
       </div>
-      <p class="note"><strong>Earlier version.</strong> This grew out of my 2023 prototype (IAS-18), which introduced virtual walls, waypoints and “swarm sculpting”, such as shaping drones into the letters SNU with one hand.</p>
-      <p class="note"><strong>Multi-user extension (KSME 2023).</strong> We extended the interface so a commander and staff at different locations can direct swarms together in one shared VR space, the system covered by the patent below.</p>
+      <p class="note"><strong>Related.</strong> Grew out of my 2023 prototype (IAS-18) and was extended to multi-user command and control (KSME 2023), covered by the patent below.</p>
       <div class="facts">
         <div class="fact"><p class="k">Korean patent</p><p class="v">10-2886038 (2025)</p></div>
       </div>
-      <p><strong>My role:</strong> Led the entire project from start to finish as first author, from the interface design and VR swarm simulation to the human-subject studies and writing. Co-inventor on the resulting patent.</p>
+      <p><strong>My role:</strong> Led the project end to end as first author; co-inventor on the resulting patent.</p>
       <div class="paperlinks">
         <a href="https://doi.org/10.1016/j.eswa.2026.132234">Paper</a>
         <a href="papers/heo2023-ias18-human-swarm-interaction.pdf">2023 prototype (PDF)</a>
@@ -283,12 +277,15 @@ footer p { margin: 0; }
         <h3>Interactive Simulation of Dexterous Manipulation with Hand Tracking</h3>
         <p class="paper-title">Reaching into VR with your real hands, from a single user to multi-user, contact-rich scenes</p>
       </div>
-      <p>Most VR and simulation tools reduce the hand to a controller click. I first-authored a system that let people grab, roll and insert virtual objects with their own fingers and feel the contact, then built it out into a multi-user version and helped scale the simulation to contact-rich scenes.</p>
+      <div class="mc">
+        <p><strong>Motivation.</strong> VR and simulation tools usually reduce the hand to a controller click.</p>
+        <p><strong>Contribution.</strong> Real hand–object interaction with haptic feedback, grown from a single-user system to a distributed two-user simulator and large-scale GPU simulation.</p>
+      </div>
       <ol class="timeline">
         <li>
           <span class="when">2022</span>
           <div class="what">
-            <p><strong>System and CES demo (KRoC 2022 and UR 2022, first author).</strong> Combined VIST hand tracking, a passivity-based (PMI) physics simulator and piezo vibration at three fingertips, shown here in peg-in-hole and ball manipulation from both papers. Our team also showed it live at CES 2022 in Las Vegas, where the same tracking drove a three-finger robot hand.</p>
+            <p><strong>System and CES demo (KRoC 2022, UR 2022, first author).</strong> VIST tracking, a passivity-based physics simulator and fingertip vibration, shown live at CES 2022, where it also drove a robot hand.</p>
             <div class="tl-media">
               <figure>
                 <video src="media/vr-peg-in-hole.mp4?v=2" poster="media/vr-peg-in-hole.jpg?v=2" style="aspect-ratio: 720 / 612; object-fit: fill;" autoplay muted loop playsinline preload="metadata" aria-label="Virtual hand inserting a peg into a hole"></video>
@@ -318,7 +315,7 @@ footer p { margin: 0; }
         <li>
           <span class="when">2023</span>
           <div class="what">
-            <p><strong>Two-user collaboration (KHC 2023, first author).</strong> Built a serverless, distributed multi-user simulator: each of two remote users runs their own PMI-based simulation, and consensus control keeps the shared virtual object in sync so they can insert a peg together. Fingertip force (CHD) and vibration feedback scale with the simulated contact force. This became the basis of the multi-user scenario at the ICRA 2024 EXPO.</p>
+            <p><strong>Two-user collaboration (KHC 2023, first author).</strong> A serverless, distributed simulator in which two remote users assemble a shared peg-in-hole with haptic feedback; the basis of the ICRA 2024 EXPO multi-user demo.</p>
             <div class="tl-media">
               <figure>
                 <video src="media/multiuser-user1.mp4" poster="media/multiuser-user1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="User 1 view: overview of two virtual hands inserting a peg together"></video>
@@ -339,7 +336,7 @@ footer p { margin: 0; }
         <li>
           <span class="when">2024</span>
           <div class="what">
-            <p><strong>ICRA 2024 EXPO.</strong> Teleoperated a robot hand through a tight-tolerance bolting task in VR and ran a two-user collaborative hand simulation, both with fingertip haptic feedback. The robot-hand side built on my haptic glove for robot-hand teleoperation (ICROS 2023) and our bolting simulation (ICROS 2024).</p>
+            <p><strong>ICRA 2024 EXPO.</strong> Robot-hand bolting teleoperation and two-user collaborative simulation in VR, built on our haptic glove (ICROS 2023) and bolting simulation (ICROS 2024).</p>
             <div class="paperlinks">
               <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11480358">Haptic glove (ICROS 2023)</a>
               <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11908781">Bolting simulation (ICROS 2024)</a>
@@ -355,7 +352,7 @@ footer p { margin: 0; }
         <li>
           <span class="when">2025</span>
           <div class="what">
-            <p><strong>ICRA 2025.</strong> A GPU-accelerated SubADMM simulator handled a hand scene with 281 rigid bodies and about 1,773 contacts in 5 ms per step, and scaled to 2,000 sliding cubes in 5.5 ms.</p>
+            <p><strong>ICRA 2025.</strong> A GPU-accelerated simulator running 281 rigid bodies and about 1,773 contacts at 5 ms per step.</p>
             <div class="paperlinks">
               <a href="https://doi.org/10.1109/ICRA55743.2025.11128665">Paper</a>
             </div>
@@ -368,7 +365,7 @@ footer p { margin: 0; }
           </div>
         </li>
       </ol>
-      <p><strong>My role:</strong> First author of the 2022 system, the 2023 multi-user system (KHC 2023) and the 2023 haptic glove for robot-hand teleoperation (ICROS 2023), and one of the four team members who ran the CES 2022 demo. Then led the initial implementation of the ICRA 2024 EXPO multi-user simulation across the full pipeline: hand mapping, real-to-VR virtual coupling, dynamics simulation and the contact solver. Helped build the initial version of the ICRA 2025 simulator.</p>
+      <p><strong>My role:</strong> First author of the 2022 system, the 2023 two-user simulator and the ICROS 2023 haptic glove; on the CES 2022 demo team. Led the initial implementation of the EXPO multi-user simulation and helped build the first version of the ICRA 2025 simulator.</p>
     </div>
   </article>
 
@@ -385,27 +382,17 @@ footer p { margin: 0; }
         <p class="paper-title">Hand tracking that keeps working through occlusion, magnetic interference and contact</p>
       </div>
       <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/y9T0Uts-DuI" title="VIST hand tracking demo" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-      <div class="par">
-        <div>
-          <h4>Problem</h4>
-          <p>Every hand-tracking sensor fails somewhere: cameras lose occluded fingers, IMUs drift and pick up magnetic interference, and soft sensors misread contact as bending.</p>
-        </div>
-        <div>
-          <h4>Approach</h4>
-          <p>VIST: a 52–55 g glove with 7 IMUs and 37 colored fabric markers, plus a head-mounted stereo camera. A tightly coupled filter fuses the two and self-calibrates hand and glove parameters in real time under anatomical constraints.</p>
-        </div>
-        <div>
-          <h4>Results</h4>
-          <p>10.69 mm mean keypoint error in free motion across 15 participants (99% of frames within 35 mm), 12.68 mm while holding objects and 10.89 mm while wearing fingertip haptic devices. Tracking also held outdoors, near magnetic objects and outside the camera view, on a glove costing about $100 in materials.</p>
-        </div>
+      <div class="mc">
+        <p><strong>Motivation.</strong> Cameras lose occluded fingers, IMUs drift near metal, and soft sensors confuse contact with bending.</p>
+        <p><strong>Contribution.</strong> A glove fusing IMUs and colored markers with a head-mounted stereo camera, tracking to about 11 mm through occlusion, magnetic interference and contact.</p>
       </div>
-      <p class="note"><strong>Follow-up (RSS 2023 workshop).</strong> We extended the glove to all five fingers, with 14 IMUs and 65 markers, to record dexterous-manipulation demonstrations for robot learning. It kept tracking through heavily occluding grasps where Quest hand tracking and a VICON system often lost the hand.</p>
+      <p class="note"><strong>Follow-up (RSS 2023 workshop).</strong> Extended to five fingers to collect dexterous-manipulation demonstrations for robot learning.</p>
       <div class="facts">
         <div class="fact"><p class="k">Korean patent</p><p class="v">10-2456872 (2022)</p></div>
         <div class="fact"><p class="k">Registered software</p><p class="v">C-2022-054259</p></div>
         <div class="fact"><p class="k">Licensed to industry</p><p class="v"><a href="https://quester.kr/">Quester Inc.</a>, 2022 and 2023</p></div>
       </div>
-      <p><strong>My role:</strong> Optimized the tracking code and ran experiments. Also helped build the fingertip haptic devices used in the evaluation and implement the 3D drone-swarm control interface shown in the paper. Co-inventor on the resulting patent.</p>
+      <p><strong>My role:</strong> Optimized the tracking code and ran experiments; helped build the haptic devices and the drone-swarm interface. Co-inventor on the patent.</p>
       <div class="paperlinks">
         <a href="https://doi.org/10.1126/scirobotics.abe1315">Paper</a>
         <a href="https://doi.org/10.8080/1020210192663">Patent</a>
@@ -426,22 +413,12 @@ footer p { margin: 0; }
         <p class="paper-title">Teleoperating through a live 3D map you can inspect in VR</p>
       </div>
       <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/RmDgk0cmOk8" title="Human-in-the-loop Gaussian splatting teleoperation video" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-      <div class="par">
-        <div>
-          <h4>Problem</h4>
-          <p>Camera-stream teleoperation gives tunnel vision and weak depth cues. A photorealistic 3D map would help, but collecting the many viewpoints it needs is risky in cluttered industrial sites.</p>
-        </div>
-        <div>
-          <h4>Approach</h4>
-          <p>A human-in-the-loop cycle: Gaussian-splatting reconstruction that fuses RGB-D with robot motion data, a VR view with unobserved-region and collision warnings, and finger gestures to preview and pick the robot’s next viewpoint.</p>
-        </div>
-        <div>
-          <h4>Results</h4>
-          <p>Five non-expert operators reconstructed three target valves in a simulated refinery in 10 min 48 s, about 4 minutes faster than an autonomous planner given a pre-built map, at higher quality (PSNR 17.70 vs 16.38). Motion-data fusion lifted PSNR from 13–15 to 25–27 over a vision-only baseline. Tested on a Franka Panda arm and a 5 m aerial manipulator.</p>
-        </div>
+      <div class="mc">
+        <p><strong>Motivation.</strong> Live camera streams give teleoperators tunnel vision and weak depth cues.</p>
+        <p><strong>Contribution.</strong> A VR loop that builds a live Gaussian-splatting map from RGB-D and robot motion and lets operators pick safe viewpoints by hand; faster and higher-fidelity than an autonomous planner, tested on a robot arm and an aerial manipulator.</p>
       </div>
-      <p class="note"><strong>Follow-up (KHC 2026).</strong> We added passivity-based bilateral haptic control on top of the Gaussian-splatting view: 1.07 mm tracking and 1.15 mm virtual-proxy control error (RMSE), and a side peg-in-hole with 5 mm tolerance completed on the suspended aerial manipulator.</p>
-      <p><strong>My role:</strong> Implemented the MuJoCo-based dynamics simulation of the remote robot and inverse-kinematics-based motion planning, and wrote part of the paper.</p>
+      <p class="note"><strong>Follow-up (KHC 2026).</strong> Added passivity-based bilateral haptic control, completing a 5 mm-tolerance peg-in-hole on an aerial manipulator.</p>
+      <p><strong>My role:</strong> Implemented the MuJoCo-based simulation of the remote robot and IK-based motion planning; wrote part of the paper.</p>
       <div class="paperlinks">
         <a href="https://doi.org/10.1109/LRA.2025.3632755">Paper</a>
       </div>
@@ -460,11 +437,14 @@ footer p { margin: 0; }
         <h3>Hand Tracking: Survey</h3>
         <p class="paper-title">Mapping the hand-tracking landscape across seven sensing modalities</p>
       </div>
-      <p>Hand tracking matters for robotics, HCI and VR/AR, but the work is scattered across sensors and communities. This survey reviews more than 130 works and sorts them into seven sensing modalities. The main finding: no single sensor wins everywhere, so combining modalities is the most promising path.</p>
+      <div class="mc">
+        <p><strong>Motivation.</strong> Hand-tracking research is scattered across sensors and communities.</p>
+        <p><strong>Contribution.</strong> A review of 130+ works across seven sensing modalities, concluding that multimodal fusion is the most promising path.</p>
+      </div>
       <ul class="chips" aria-label="Seven sensing modalities">
         <li>Vision</li><li>Soft wearable</li><li>Encoder</li><li>Magnetic</li><li>IMU</li><li>EMG</li><li class="key">Multimodal fusion</li>
       </ul>
-      <p><strong>My role:</strong> Led every stage of the paper as first author, from the literature review and taxonomy to writing.</p>
+      <p><strong>My role:</strong> Led the paper end to end as first author.</p>
       <div class="paperlinks">
         <a href="https://doi.org/10.1007/s12555-024-0298-1">Paper</a>
       </div>
