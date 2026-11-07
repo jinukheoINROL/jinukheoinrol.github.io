@@ -173,7 +173,12 @@ h4 { margin: 0 0 6px; font-size: 15px; font-weight: 600; }
 footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 40px; padding-top: 28px; border-top: 1px solid var(--rule); font-size: 15px; color: var(--muted); }
 footer p { margin: 0; }
 
+.vsep { display: none; }
 @media (max-width: 640px) {
+  .meta { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
+  .meta .badge { margin-top: 0; }
+  .venue br { display: none; }
+  .vsep { display: inline; }
   .wrap { padding: 48px 20px 40px; gap: 64px; }
   h1 { font-size: 44px; }
   .statement { font-size: 20px; }
@@ -269,7 +274,7 @@ footer p { margin: 0; }
   <article class="project">
     <div class="meta">
       <p class="year">2022–2025</p>
-      <p class="venue">KRoC / UR 2022<br>CES 2022 demo<br>KHC 2023<br>ICRA 2024 EXPO<br>ICRA 2025</p>
+      <p class="venue">KRoC / UR 2022<span class="vsep" aria-hidden="true"> · </span><br>CES 2022 demo<span class="vsep" aria-hidden="true"> · </span><br>KHC 2023<span class="vsep" aria-hidden="true"> · </span><br>ICRA 2024 EXPO<span class="vsep" aria-hidden="true"> · </span><br>ICRA 2025</p>
       <span class="badge">First author (2022–23)</span>
       <span class="badge secondary">Co-author (2024–25)</span>
     </div>
@@ -384,7 +389,7 @@ footer p { margin: 0; }
   <article class="project">
     <div class="meta">
       <p class="year">2021–2024</p>
-      <p class="venue">Science Robotics<br>RSS 2023 workshop<br>IJCAS (invited)</p>
+      <p class="venue">Science Robotics<span class="vsep" aria-hidden="true"> · </span><br>RSS 2023 workshop<span class="vsep" aria-hidden="true"> · </span><br>IJCAS (invited)</p>
       <span class="badge">First author (survey)</span>
       <span class="badge secondary">Co-author (VIST)</span>
     </div>
