@@ -146,8 +146,9 @@ h4 { margin: 0 0 6px; font-size: 15px; font-weight: 600; }
 
 /* Timeline inside a project */
 .timeline { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; }
-.timeline li { display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 16px 0; border-top: 1px solid var(--rule); }
-.timeline li:last-child { border-bottom: 1px solid var(--rule); }
+.timeline > li { display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 16px 0; border-top: 1px solid var(--rule); }
+.timeline > li:last-child { border-bottom: 1px solid var(--rule); }
+.timeline .fact { flex: 1 1 160px; }
 .timeline .when { flex: 0 0 64px; font-size: 15px; font-weight: 600; }
 .timeline .what { flex: 999 1 420px; min-width: 0; font-size: 16px; }
 .timeline .what p { margin: 0; }
@@ -278,8 +279,8 @@ footer p { margin: 0; }
         <p class="paper-title">Reaching into VR with your real hands, from a single user to multi-user, contact-rich scenes</p>
       </div>
       <div class="mc">
-        <p><strong>Motivation.</strong> VR and simulation tools usually reduce the hand to a controller click.</p>
-        <p><strong>Contribution.</strong> Real hand–object interaction with haptic feedback, grown from a single-user system to a distributed two-user simulator and large-scale GPU simulation.</p>
+        <p><strong>Motivation.</strong> Metaverse platforms let people meet in a shared virtual space, but not yet pick things up, feel them, or build something together with their own hands.</p>
+        <p><strong>Contribution.</strong> Physically realistic hand–object simulation with tactile haptic feedback, grown from a single-user system to a distributed multi-user simulator and large-scale GPU simulation.</p>
       </div>
       <ol class="timeline">
         <li>
@@ -313,9 +314,19 @@ footer p { margin: 0; }
           </div>
         </li>
         <li>
+          <span class="when">2022</span>
+          <div class="what">
+            <p><strong>Joint patent application with Samsung Electronics.</strong> A haptic glove that drives heating elements and vibration actuators together, filed in Korea and the US (via PCT) and published in 2024 (KR) and 2025 (US).</p>
+            <div class="paperlinks">
+              <a href="https://doi.org/10.8080/1020220154009">KR 10-2024-0068492</a>
+              <a href="https://patents.google.com/patent/US20250265912A1/en">US 2025/0265912 A1</a>
+            </div>
+          </div>
+        </li>
+        <li>
           <span class="when">2023</span>
           <div class="what">
-            <p><strong>Two-user collaboration (KHC 2023, first author).</strong> A serverless, distributed simulator in which two remote users assemble a shared peg-in-hole with haptic feedback; the basis of the ICRA 2024 EXPO multi-user demo.</p>
+            <p><strong>Multi-user collaboration (KHC 2023, first author).</strong> A serverless, distributed simulator in which remote users assemble a shared peg-in-hole together with haptic feedback; the basis of the ICRA 2024 EXPO multi-user demo.</p>
             <div class="tl-media">
               <figure>
                 <video src="media/multiuser-user1.mp4" poster="media/multiuser-user1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="User 1 view: overview of two virtual hands inserting a peg together"></video>
@@ -336,7 +347,7 @@ footer p { margin: 0; }
         <li>
           <span class="when">2024</span>
           <div class="what">
-            <p><strong>ICRA 2024 EXPO.</strong> Robot-hand bolting teleoperation and two-user collaborative simulation in VR, built on our haptic glove (ICROS 2023) and bolting simulation (ICROS 2024).</p>
+            <p><strong>ICRA 2024 EXPO.</strong> Robot-hand bolting teleoperation and multi-user collaborative simulation in VR, built on our haptic glove (ICROS 2023) and bolting simulation (ICROS 2024).</p>
             <div class="paperlinks">
               <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11480358">Haptic glove (ICROS 2023)</a>
               <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11908781">Bolting simulation (ICROS 2024)</a>
@@ -365,42 +376,72 @@ footer p { margin: 0; }
           </div>
         </li>
       </ol>
-      <p><strong>My role:</strong> First author of the 2022 system, the 2023 two-user simulator and the ICROS 2023 haptic glove; on the CES 2022 demo team. Led the initial implementation of the EXPO multi-user simulation and helped build the first version of the ICRA 2025 simulator.</p>
+      <p><strong>My role:</strong> First author of the 2022 system, the 2023 multi-user simulator and the ICROS 2023 haptic glove; on the CES 2022 demo team. Led the initial implementation of the EXPO multi-user simulation and helped build the first version of the ICRA 2025 simulator.</p>
     </div>
   </article>
 
-  <!-- 3. VIST hand tracking -->
+  <!-- 4. Hand tracking: VIST system and survey -->
   <article class="project">
     <div class="meta">
-      <p class="year">2021</p>
-      <p class="venue">Science Robotics</p>
-      <span class="badge secondary">Co-author</span>
+      <p class="year">2021–2024</p>
+      <p class="venue">Science Robotics<br>RSS 2023 workshop<br>IJCAS (invited)</p>
+      <span class="badge">First author (survey)</span>
+      <span class="badge secondary">Co-author (VIST)</span>
     </div>
     <div class="body">
       <div>
-        <h3>Visual-Inertial Hand Motion Tracking</h3>
-        <p class="paper-title">Hand tracking that keeps working through occlusion, magnetic interference and contact</p>
+        <h3>Visual-Inertial Hand Tracking</h3>
+        <p class="paper-title">Hand tracking that keeps working through occlusion, magnetic interference and contact, and a survey of the field</p>
       </div>
-      <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/y9T0Uts-DuI" title="VIST hand tracking demo" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
       <div class="mc">
-        <p><strong>Motivation.</strong> Cameras lose occluded fingers, IMUs drift near metal, and soft sensors confuse contact with bending.</p>
-        <p><strong>Contribution.</strong> A glove fusing IMUs and colored markers with a head-mounted stereo camera, tracking to about 11 mm through occlusion, magnetic interference and contact.</p>
+        <p><strong>Motivation.</strong> Every hand-tracking sensor fails somewhere: cameras lose occluded fingers, IMUs drift near metal, and soft sensors confuse contact with bending.</p>
+        <p><strong>Contribution.</strong> A visual-inertial glove that tracks through all three, and a survey of 130+ works concluding that this kind of multimodal fusion is the most promising path.</p>
       </div>
-      <p class="note"><strong>Follow-up (RSS 2023 workshop).</strong> Extended to five fingers to collect dexterous-manipulation demonstrations for robot learning.</p>
-      <div class="facts">
-        <div class="fact"><p class="k">Korean patent</p><p class="v">10-2456872 (2022)</p></div>
-        <div class="fact"><p class="k">Registered software</p><p class="v">C-2022-054259</p></div>
-        <div class="fact"><p class="k">Licensed to industry</p><p class="v"><a href="https://quester.kr/">Quester Inc.</a>, 2022 and 2023</p></div>
-      </div>
-      <p><strong>My role:</strong> Optimized the tracking code and ran experiments; helped build the haptic devices and the drone-swarm interface. Co-inventor on the patent.</p>
-      <div class="paperlinks">
-        <a href="https://doi.org/10.1126/scirobotics.abe1315">Paper</a>
-        <a href="https://doi.org/10.8080/1020210192663">Patent</a>
-      </div>
+      <ol class="timeline">
+        <li>
+          <span class="when">2021</span>
+          <div class="what">
+            <p><strong>VIST (Science Robotics, co-author).</strong> A glove fusing IMUs and colored markers with a head-mounted stereo camera, tracking to about 11 mm.</p>
+            <div class="tl-media single">
+              <figure>
+                <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/y9T0Uts-DuI" title="VIST hand tracking demo" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+              </figure>
+            </div>
+            <div class="facts" style="margin-top: 12px">
+              <div class="fact"><p class="k">Korean patent</p><p class="v">10-2456872 (2022)</p></div>
+              <div class="fact"><p class="k">Registered software</p><p class="v">C-2022-054259</p></div>
+              <div class="fact"><p class="k">Licensed to industry</p><p class="v"><a href="https://quester.kr/">Quester Inc.</a>, 2022 and 2023</p></div>
+            </div>
+            <div class="paperlinks">
+              <a href="https://doi.org/10.1126/scirobotics.abe1315">Paper</a>
+              <a href="https://doi.org/10.8080/1020210192663">Patent</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="when">2023</span>
+          <div class="what">
+            <p><strong>Five-finger extension (RSS 2023 workshop, co-author).</strong> Extended to all five fingers to collect dexterous-manipulation demonstrations for robot learning.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2024</span>
+          <div class="what">
+            <p><strong>Hand Tracking: Survey (IJCAS, first author, invited).</strong> A review of 130+ works across seven sensing modalities.</p>
+            <ul class="chips" aria-label="Seven sensing modalities" style="margin-top: 10px">
+              <li>Vision</li><li>Soft wearable</li><li>Encoder</li><li>Magnetic</li><li>IMU</li><li>EMG</li><li class="key">Multimodal fusion</li>
+            </ul>
+            <div class="paperlinks" style="margin-top: 10px">
+              <a href="https://doi.org/10.1007/s12555-024-0298-1">Paper</a>
+            </div>
+          </div>
+        </li>
+      </ol>
+      <p><strong>My role:</strong> VIST: optimized the tracking code and ran experiments; helped build the haptic devices and the drone-swarm interface; co-inventor on the patent. Survey: led the paper end to end as first author.</p>
     </div>
   </article>
 
-  <!-- 4. HIL-GS teleoperation -->
+  <!-- 5. HIL-GS teleoperation -->
   <article class="project">
     <div class="meta">
       <p class="year">2026</p>
@@ -425,31 +466,6 @@ footer p { margin: 0; }
     </div>
   </article>
 
-  <!-- 5. Survey -->
-  <article class="project">
-    <div class="meta">
-      <p class="year">2024</p>
-      <p class="venue">International Journal of Control, Automation and Systems</p>
-      <span class="badge">First author, invited</span>
-    </div>
-    <div class="body">
-      <div>
-        <h3>Hand Tracking: Survey</h3>
-        <p class="paper-title">Mapping the hand-tracking landscape across seven sensing modalities</p>
-      </div>
-      <div class="mc">
-        <p><strong>Motivation.</strong> Hand-tracking research is scattered across sensors and communities.</p>
-        <p><strong>Contribution.</strong> A review of 130+ works across seven sensing modalities, concluding that multimodal fusion is the most promising path.</p>
-      </div>
-      <ul class="chips" aria-label="Seven sensing modalities">
-        <li>Vision</li><li>Soft wearable</li><li>Encoder</li><li>Magnetic</li><li>IMU</li><li>EMG</li><li class="key">Multimodal fusion</li>
-      </ul>
-      <p><strong>My role:</strong> Led the paper end to end as first author.</p>
-      <div class="paperlinks">
-        <a href="https://doi.org/10.1007/s12555-024-0298-1">Paper</a>
-      </div>
-    </div>
-  </article>
 </section>
 
 <section class="stack" aria-labelledby="ip">
