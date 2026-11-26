@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jinuk Heo | Research</title>
+<meta name="description" content="Jinuk Heo, Ph.D. candidate at Seoul National University. Telerobotics: passivity-based teleoperation over unreliable networks, telepresence with hand tracking and haptics, finger-based interfaces and contact-rich simulation.">
+<!--
+  How to edit:
+  - Text wrapped in <mark class="ph"> is a placeholder. Replace it, then delete the <mark> tags.
+  - Put your CV in the same folder as this file, named cv.pdf.
+  - Videos and images live in the media/ folder; workshop PDFs live in papers/.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FFFFFF;
+  --text: #1F2328;
+  --muted: #57606A;
+  --rule: #D8DEE4;
+  --line: #D0D7DE;
+  --accent: #1F5FD1;
+  --accent-hover: #174AA6;
+  --on-accent: #FFFFFF;
+  --video: #20252C;
+  --on-video: #E6EDF3;
+  --ph-bg: #FFF1C2;
+  --ph-text: #5C4300;
+  --marker: #E8590C;
+  --bone: #1F2328;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0F1216;
+    --text: #E6EDF3;
+    --muted: #9BA6B2;
+    --rule: #2D333B;
+    --line: #3A424C;
+    --accent: #6EA2FF;
+    --accent-hover: #9CC0FF;
+    --on-accent: #0F1216;
+    --video: #1A1F26;
+    --on-video: #E6EDF3;
+    --ph-bg: #4A3B0A;
+    --ph-text: #FFE7A3;
+    --marker: #FF8A4C;
+    --bone: #E6EDF3;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+a { color: var(--accent); }
+a:hover { color: var(--accent-hover); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+mark.ph { background: var(--ph-bg); color: var(--ph-text); padding: 1px 6px; border-radius: 4px; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 72px 40px 56px; display: flex; flex-direction: column; gap: 88px; }
+
+/* Hero */
+.hero { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; }
+.hero-text { flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+h1 { margin: 0; font-size: 60px; line-height: 1.05; font-weight: 600; letter-spacing: -0.02em; }
+.affil { margin: 0; font-size: 19px; line-height: 1.5; color: var(--muted); }
+.statement { margin: 0; max-width: 30em; font-size: 24px; line-height: 1.45; font-weight: 500; }
+.status { margin: 0; font-size: 16px; color: var(--muted); }
+.links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.pill { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); text-decoration: none; font-size: 15px; font-weight: 500; }
+.pill:hover { border-color: var(--muted); color: var(--text); }
+.pill.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); padding: 0 20px; }
+.pill.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--on-accent); }
+
+/* Video and images */
+.video { width: 100%; max-width: 720px; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: var(--video); }
+.video iframe, .video video { display: block; width: 100%; height: 100%; border: 0; object-fit: cover; }
+.loops { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; max-width: 720px; margin: 0; }
+.loops figure { margin: 0; }
+.loops video { display: block; width: 100%; aspect-ratio: 720 / 612; border-radius: 10px; background: var(--video); object-fit: cover; }
+.loops figcaption, .media-pair figcaption { margin-top: 6px; font-size: 14px; color: var(--muted); }
+.media-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.media-pair figure { margin: 0; }
+.media-pair .video { max-width: none; }
+.skills { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 0 32px; margin: 0; }
+.skills dt, .skills dd { padding: 14px 0; border-top: 1px solid var(--rule); }
+.skills dt { font-size: 15px; color: var(--muted); }
+.skills dd { margin: 0; font-size: 16px; }
+.skills dt:last-of-type, .skills dd:last-of-type { border-bottom: 1px solid var(--rule); }
+@media (max-width: 640px) { .skills { grid-template-columns: 1fr; } .skills dd { border-top: 0; padding-top: 0; } .skills dt:last-of-type { border-bottom: 0; } }
+.video-wide { width: 100%; max-width: 720px; border-radius: 12px; overflow: hidden; background: var(--video); }
+.video-wide video, .video-wide img { display: block; width: 100%; height: auto; }
+.thesis-media { margin: 0; }
+.thesis-media figcaption { margin-top: 6px; font-size: 14px; color: var(--muted); }
+
+/* Sections */
+h2 { margin: 0; font-size: 32px; line-height: 1.2; font-weight: 600; letter-spacing: -0.01em; }
+.section-head { display: flex; flex-direction: column; gap: 12px; padding-bottom: 40px; }
+.lede { margin: 0; max-width: 42em; color: var(--muted); }
+.stack { display: flex; flex-direction: column; gap: 24px; }
+
+/* Projects */
+.project { display: flex; flex-wrap: wrap; gap: 32px 48px; padding: 48px 0; border-top: 1px solid var(--rule); }
+.project:last-child { border-bottom: 1px solid var(--rule); }
+.meta { flex: 1 1 180px; display: flex; flex-direction: column; gap: 8px; }
+.meta p { margin: 0; }
+.year { font-size: 15px; color: var(--muted); }
+.venue { font-size: 16px; line-height: 1.4; font-weight: 500; }
+.badge { align-self: flex-start; margin-top: 4px; padding: 3px 10px; border: 1px solid var(--accent); border-radius: 6px; color: var(--accent); font-size: 14px; font-weight: 500; }
+.badge.secondary { border-color: var(--line); color: var(--muted); }
+.body { flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
+h3 { margin: 0; font-size: 30px; line-height: 1.2; font-weight: 600; letter-spacing: -0.01em; }
+.paper-title { margin: 8px 0 0; font-size: 16px; color: var(--muted); }
+.body > p { margin: 0; max-width: 40em; font-size: 16px; }
+.par { display: flex; flex-wrap: wrap; gap: 28px; }
+.par > div { flex: 1 1 220px; min-width: 0; }
+h4 { margin: 0 0 6px; font-size: 15px; font-weight: 600; }
+.par p { margin: 0; font-size: 16px; }
+.mc { display: flex; flex-direction: column; gap: 6px; max-width: 40em; }
+.mc p { margin: 0; font-size: 16px; }
+.note { margin: 0; max-width: 40em; font-size: 16px; color: var(--muted); }
+.note strong { color: var(--text); font-weight: 600; }
+.facts { display: flex; flex-wrap: wrap; gap: 12px; }
+.fact { flex: 0 1 240px; padding: 14px 18px; border: 1px solid var(--rule); border-radius: 8px; }
+.fact p { margin: 0; }
+.fact .k { font-size: 14px; color: var(--muted); }
+.fact .v { margin-top: 2px; font-size: 16px; font-weight: 500; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.chips li { padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 15px; }
+.chips li.key { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 500; }
+.paperlinks { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 15px; font-weight: 500; }
+.tl-media { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 12px 0 0; align-items: start; }
+@media (max-width: 520px) { .tl-media { grid-template-columns: 1fr; } }
+.tl-media.single { grid-template-columns: minmax(0, 1fr); }
+.tl-media figure { margin: 0; }
+.tl-media video, .tl-media img { display: block; width: 100%; height: auto; border-radius: 10px; background: var(--video); }
+.tl-media figure > img + video { margin-top: 8px; }
+.tl-media figcaption { margin-top: 6px; font-size: 14px; color: var(--muted); }
+.tl-media video + img.station { width: 45%; margin-top: 8px; }
+
+/* Timeline inside a project */
+.timeline { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; }
+.timeline > li { display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 16px 0; border-top: 1px solid var(--rule); }
+.timeline > li:last-child { border-bottom: 1px solid var(--rule); }
+.timeline .fact { flex: 1 1 160px; }
+.timeline .when { flex: 0 0 64px; font-size: 15px; font-weight: 600; }
+.timeline .what { flex: 999 1 420px; min-width: 0; font-size: 16px; }
+.timeline .what p { margin: 0; }
+.timeline .paperlinks { margin-top: 6px; }
+
+/* IP rows */
+.ip-row { display: flex; flex-wrap: wrap; gap: 6px 32px; padding: 20px 0; border-top: 1px solid var(--rule); }
+.ip-row:last-child { border-bottom: 1px solid var(--rule); }
+.ip-type { flex: 0 0 200px; margin: 0; font-size: 15px; color: var(--muted); }
+.ip-main { flex: 999 1 420px; min-width: 0; }
+.ip-title { margin: 0; font-size: 17px; line-height: 1.45; font-weight: 500; }
+.ip-detail { margin: 4px 0 0; font-size: 15px; color: var(--muted); }
+.ip-date { flex: 0 0 120px; margin: 0; font-size: 15px; color: var(--muted); }
+
+/* Publications and footer */
+.pub-group { display: flex; flex-direction: column; gap: 16px; }
+.pub-group h3 { font-size: 18px; letter-spacing: 0; color: var(--muted); }
+.pubs { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 18px; max-width: 52em; }
+.pubs li { font-size: 16px; }
+.pubs .links-inline a { margin-right: 14px; }
+.tag { display: inline-block; margin: 0 6px 0 2px; padding: 0 8px; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; line-height: 1.6; color: var(--muted); vertical-align: 1px; }
+footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 40px; padding-top: 28px; border-top: 1px solid var(--rule); font-size: 15px; color: var(--muted); }
+footer p { margin: 0; }
+
+.vsep { display: none; }
+@media (max-width: 640px) {
+  .meta { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
+  .meta .badge { margin-top: 0; }
+  .venue br { display: none; }
+  .vsep { display: inline; }
+  .wrap { padding: 48px 20px 40px; gap: 64px; }
+  h1 { font-size: 44px; }
+  .statement { font-size: 20px; }
+  h2 { font-size: 26px; }
+  h3 { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<header class="hero">
+  <div class="hero-text">
+    <h1>Jinuk Heo</h1>
+    <p class="affil">Ph.D. candidate in Mechanical Engineering, Seoul National University<br>Interactive &amp; Networked Robotics Lab, advised by Prof. Dongjun Lee</p>
+    <p class="statement">I work across telerobotics, from robust teleoperation to immersive telepresence. My Ph.D. research develops passivity-based teleoperation that keeps robot arms stable over unreliable networks, building on hands-on work in hand tracking, haptic feedback, finger-based interfaces and contact-rich simulation.</p>
+    <p class="status">Open to research and engineering roles in robotics.</p>
+    <nav class="links" aria-label="Profile links">
+      <a class="pill primary" href="cv.pdf">CV (PDF)</a>
+      <a class="pill" href="mailto:jinukheo@snu.ac.kr">Email</a>
+      <a class="pill" href="https://scholar.google.com/citations?user=yWz2TcQAAAAJ&amp;hl=en">Google Scholar</a>
+      <a class="pill" href="https://www.linkedin.com/in/jinuk-heo-992336316/">LinkedIn</a>
+      <a class="pill" href="https://orcid.org/0009-0008-6991-3234">ORCID</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Highlight reel: hidden until the video exists. To show it, upload the reel to YouTube,
+     replace VIDEO_ID below, and remove the comment markers around this section.
+<section aria-label="Highlight reel">
+  <div class="video" style="max-width: 880px"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Highlight reel" loading="lazy" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</section>
+-->
+
+<section aria-labelledby="research">
+  <div class="section-head">
+    <h2 id="research">Selected research</h2>
+    <p class="lede">These projects span teleoperation, hand-based interfaces for robots and swarms, interactive contact-rich simulation, and hand tracking. The code stays with the lab, so each project links to its paper and video instead. I’m always happy to talk about any of this work.</p>
+  </div>
+
+  <!-- 0. Thesis research (ongoing) -->
+  <article class="project">
+    <div class="meta">
+      <p class="year">Ongoing</p>
+      <p class="venue">Ph.D. thesis research</p>
+      <span class="badge">Manuscript in preparation</span>
+    </div>
+    <div class="body">
+      <div>
+        <h3>Passivity-Based Teleoperation over Unreliable Networks</h3>
+        <p class="paper-title">Keeping robot-arm teleoperation stable when packets arrive late, out of order, or not at all</p>
+      </div>
+      <figure class="thesis-media">
+        <div class="video-wide"><video src="media/thesis-teleop_fast-forwarded.mp4" poster="media/thesis-teleop.jpg" autoplay muted loop playsinline controls preload="auto" aria-label="Teleoperation demo (fast-forwarded): operator view, operating station and worksite views"></video></div>
+        <figcaption>Fast-forwarded</figcaption>
+      </figure>
+      <div class="mc">
+        <p><strong>Motivation.</strong> PD (spring-damper) coupling is the standard way to link robots over a network, but its stability guarantees usually assume continuous time and robots with matching joints.</p>
+        <p><strong>Contribution.</strong> Closed-form passivity conditions in task space that hold under sampling, delay, packet loss, duplication and reordering, validated on two 7-DoF arms.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 1. Human-swarm interaction -->
+  <article class="project">
+    <div class="meta">
+      <p class="year">2023–2026</p>
+      <p class="venue">Expert Systems with Applications</p>
+      <span class="badge">First author</span>
+    </div>
+    <div class="body">
+      <div>
+        <h3>Finger-based 3D Human–Swarm Interaction Interface</h3>
+        <p class="paper-title">Steering a swarm of 100+ robots with your fingers</p>
+      </div>
+      <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/YxUzck9DLKs?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=YxUzck9DLKs&amp;playsinline=1&amp;rel=0&amp;enablejsapi=1" data-yt title="Finger-based 3D human-swarm interaction demo" loading="lazy" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="mc">
+        <p><strong>Motivation.</strong> Joysticks and 2D tablets cannot express the many degrees of freedom of a large 3D swarm.</p>
+        <p><strong>Contribution.</strong> A finger-tracking VR interface for steering 100+ agents, which outperformed the baseline on both performance and workload in human-subject studies.</p>
+      </div>
+      <p class="note"><strong>Related.</strong> Grew out of my 2023 prototype (IAS-18) and was extended to multi-user command and control (KSME 2023), covered by the patent below.</p>
+      <div class="facts">
+        <div class="fact"><p class="k">Korean patent</p><p class="v">10-2886038 (2025)</p></div>
+      </div>
+      <p><strong>My role:</strong> Led the project end to end as first author; co-inventor on the resulting patent.</p>
+      <div class="paperlinks">
+        <a href="https://doi.org/10.1016/j.eswa.2026.132234">Paper</a>
+        <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11709162">Multi-user version (KSME 2023)</a>
+        <a href="https://doi.org/10.8080/1020230194923">Patent</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2. VR hand interaction and simulation -->
+  <article class="project">
+    <div class="meta">
+      <p class="year">2022–2025</p>
+      <p class="venue">KRoC / UR 2022<span class="vsep" aria-hidden="true"> · </span><br>CES 2022 demo<span class="vsep" aria-hidden="true"> · </span><br>KHC 2023<span class="vsep" aria-hidden="true"> · </span><br>ICRA 2024 EXPO<span class="vsep" aria-hidden="true"> · </span><br>ICRA 2025</p>
+      <span class="badge">First author (2022–23)</span>
+      <span class="badge secondary">Co-author (2024–25)</span>
+    </div>
+    <div class="body">
+      <div>
+        <h3>Interactive Simulation of Dexterous Manipulation with Hand Tracking</h3>
+        <p class="paper-title">Reaching into VR with your real hands, from a single user to multi-user, contact-rich scenes</p>
+      </div>
+      <div class="mc">
+        <p><strong>Motivation.</strong> Metaverse platforms let people meet in a shared virtual space, but not yet pick things up, feel them, or build something together with their own hands.</p>
+        <p><strong>Contribution.</strong> Physically realistic hand–object simulation with tactile haptic feedback, grown from a single-user system to a distributed multi-user simulator and large-scale GPU simulation.</p>
+      </div>
+      <ol class="timeline">
+        <li>
+          <span class="when">2022</span>
+          <div class="what">
+            <p><strong>System and CES demo (KRoC 2022, UR 2022, first author).</strong> VIST tracking, a passivity-based physics simulator and fingertip vibration, shown live at CES 2022, where it also drove a robot hand.</p>
+            <div class="tl-media">
+              <figure>
+                <video src="media/vr-peg-in-hole.mp4?v=2" poster="media/vr-peg-in-hole.jpg?v=2" style="aspect-ratio: 720 / 612; object-fit: fill;" autoplay muted loop playsinline preload="metadata" aria-label="Virtual hand inserting a peg into a hole"></video>
+                <figcaption>Peg-in-hole (KRoC 2022, UR 2022)</figcaption>
+              </figure>
+              <figure>
+                <video src="media/vr-ball-roll.mp4?v=2" poster="media/vr-ball-roll.jpg?v=2" style="aspect-ratio: 720 / 612; object-fit: fill;" autoplay muted loop playsinline preload="metadata" aria-label="Virtual hand gripping and rolling a ball"></video>
+                <figcaption>Ball grip and roll (KRoC 2022, UR 2022)</figcaption>
+              </figure>
+              <figure>
+                <img src="media/ces22-booth.gif" alt="CES 2022 booth: a person wearing the VIST glove in front of a stereo camera, with a laptop running the simulator and a robot hand at right" loading="lazy">
+                <figcaption>On site at CES 2022: the glove and stereo camera drive the simulator on the laptop and the robot hand at right.</figcaption>
+              </figure>
+              <figure>
+                <img src="media/ces22-team.jpg" alt="Three team members at the CES 2022 booth beside the stereo camera, the VIST glove and the robot hand" width="960" height="540" loading="lazy">
+                <figcaption>Our team at the CES 2022 booth with the demo setup: stereo camera, VIST glove and robot hand.</figcaption>
+              </figure>
+            </div>
+            <div class="paperlinks">
+              <a href="papers/heo2022-ur-wip-vr-hand-manipulation.pdf">UR 2022 paper (PDF)</a>
+              <a href="media/ces22-system.jpg">System overview</a>
+              <a href="https://www.aitimes.com/news/articleView.html?idxno=142970">News coverage (Korean)</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="when">2022</span>
+          <div class="what">
+            <p><strong>Joint patent application with Samsung Electronics.</strong> A haptic glove that drives heating elements and vibration actuators together, filed in Korea and the US (via PCT) and published in 2024 (KR) and 2025 (US).</p>
+            <div class="paperlinks">
+              <a href="https://doi.org/10.8080/1020220154009">KR 10-2024-0068492</a>
+              <a href="https://patents.google.com/patent/US20250265912A1/en" rel="noreferrer">US 2025/0265912 A1</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="when">2023</span>
+          <div class="what">
+            <p><strong>Multi-user collaboration (KHC 2023, first author).</strong> A serverless, distributed simulator in which remote users assemble a shared peg-in-hole together with haptic feedback; the basis of the ICRA 2024 EXPO multi-user demo.</p>
+            <div class="tl-media">
+              <figure>
+                <video src="media/multiuser-user1.mp4" poster="media/multiuser-user1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="User 1 view: overview of two virtual hands inserting a peg together"></video>
+                <img class="station" src="media/khc23-user1-station.jpg" alt="User 1 wearing the VIST glove at a desktop station with a stereo camera overhead" width="360" height="393" loading="lazy">
+                <figcaption>User 1: desktop station and overview</figcaption>
+              </figure>
+              <figure>
+                <video src="media/multiuser-user2.mp4" poster="media/multiuser-user2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="User 2 view: headset view of two virtual hands inserting a peg together"></video>
+                <img class="station" src="media/khc23-user2-station.jpg" alt="User 2 wearing a VR headset and the VIST glove at a separate station" width="360" height="393" loading="lazy">
+                <figcaption>User 2: VR headset station and view</figcaption>
+              </figure>
+            </div>
+            <div class="paperlinks">
+              <a href="papers/heo2023-khc-multiuser-poster.pdf">KHC 2023 poster (PDF, Korean)</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="when">2024</span>
+          <div class="what">
+            <p><strong>ICRA 2024 EXPO.</strong> Robot-hand bolting teleoperation and multi-user collaborative simulation in VR, built on our haptic glove (ICROS 2023) and bolting simulation (ICROS 2024).</p>
+            <div class="paperlinks">
+              <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11480358">Haptic glove (ICROS 2023)</a>
+              <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11908781">Bolting simulation (ICROS 2024)</a>
+            </div>
+            <div class="tl-media single">
+              <figure>
+                <div class="video"><video src="media/icra24-expo.mp4" poster="media/icra24-expo.jpg" autoplay muted loop playsinline controls preload="metadata"></video></div>
+                <figcaption>ICRA 2024 EXPO demo video</figcaption>
+              </figure>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="when">2025</span>
+          <div class="what">
+            <p><strong>ICRA 2025.</strong> A GPU-accelerated simulator running 281 rigid bodies and about 1,773 contacts at 5 ms per step.</p>
+            <div class="paperlinks">
+              <a href="https://doi.org/10.1109/ICRA55743.2025.11128665">Paper</a>
+            </div>
+            <div class="tl-media single">
+              <figure>
+                <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/6dXjwOY-fF8?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=6dXjwOY-fF8&amp;playsinline=1&amp;rel=0&amp;enablejsapi=1" data-yt title="GPU-accelerated SubADMM simulation video" loading="lazy" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                <figcaption>ICRA 2025 simulation video</figcaption>
+              </figure>
+            </div>
+          </div>
+        </li>
+      </ol>
+      <p><strong>My role:</strong> First author of the 2022 system, the 2023 multi-user simulator and the ICROS 2023 haptic glove; on the CES 2022 demo team. Led the initial implementation of the EXPO multi-user simulation and helped build the first version of the ICRA 2025 simulator.</p>
+    </div>
+  </article>
+
+  <!-- 4. Hand tracking: VIST system and survey -->
+  <article class="project">
+    <div class="meta">
+      <p class="year">2021–2024</p>
+      <p class="venue">Science Robotics<span class="vsep" aria-hidden="true"> · </span><br>RSS 2023 workshop<span class="vsep" aria-hidden="true"> · </span><br>IJCAS (invited)</p>
+      <span class="badge">First author (survey)</span>
+      <span class="badge secondary">Co-author (VIST)</span>
+    </div>
+    <div class="body">
+      <div>
+        <h3>Visual-Inertial Hand Tracking</h3>
+        <p class="paper-title">Hand tracking that keeps working through occlusion, magnetic interference and contact, and a survey of the field</p>
+      </div>
+      <div class="mc">
+        <p><strong>Motivation.</strong> Every hand-tracking sensor fails somewhere: cameras lose occluded fingers, IMUs drift near metal, and soft sensors confuse contact with bending.</p>
+        <p><strong>Contribution.</strong> A visual-inertial glove that tracks through all three, and a survey of 130+ works concluding that this kind of multimodal fusion is the most promising path.</p>
+      </div>
+      <ol class="timeline">
+        <li>
+          <span class="when">2021</span>
+          <div class="what">
+            <p><strong>VIST (Science Robotics, co-author).</strong> A glove fusing IMUs and colored markers with a head-mounted stereo camera, tracking to about 11 mm.</p>
+            <div class="tl-media single">
+              <figure>
+                <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/y9T0Uts-DuI?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=y9T0Uts-DuI&amp;playsinline=1&amp;rel=0&amp;enablejsapi=1" data-yt title="VIST hand tracking demo" loading="lazy" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+              </figure>
+            </div>
+            <div class="facts" style="margin-top: 12px">
+              <div class="fact"><p class="k">Korean patent</p><p class="v">10-2456872 (2022)</p></div>
+              <div class="fact"><p class="k">Registered software</p><p class="v">C-2022-054259</p></div>
+              <div class="fact"><p class="k">Licensed to industry</p><p class="v"><a href="https://quester.kr/">Quester Inc.</a>, 2022 and 2023</p></div>
+            </div>
+            <div class="paperlinks">
+              <a href="https://doi.org/10.1126/scirobotics.abe1315">Paper</a>
+              <a href="https://doi.org/10.8080/1020210192663">Patent</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="when">2023</span>
+          <div class="what">
+            <p><strong>Five-finger extension (RSS 2023 workshop, co-author).</strong> Extended to all five fingers to collect dexterous-manipulation demonstrations for robot learning.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2024</span>
+          <div class="what">
+            <p><strong>Hand Tracking: Survey (IJCAS, first author, invited).</strong> A review of 130+ works across seven sensing modalities.</p>
+            <div class="paperlinks">
+              <a href="https://doi.org/10.1007/s12555-024-0298-1">Paper</a>
+            </div>
+          </div>
+        </li>
+      </ol>
+      <p><strong>My role:</strong> VIST: optimized the tracking code and ran experiments; helped build the haptic devices and the drone-swarm interface; co-inventor on the patent. Survey: led the paper end to end as first author.</p>
+    </div>
+  </article>
+
+  <!-- 5. HIL-GS teleoperation -->
+  <article class="project">
+    <div class="meta">
+      <p class="year">2026</p>
+      <p class="venue">IEEE Robotics and Automation Letters</p>
+      <span class="badge secondary">Co-author</span>
+    </div>
+    <div class="body">
+      <div>
+        <h3>Human-in-the-Loop Gaussian Splatting for Robotic Teleoperation</h3>
+        <p class="paper-title">Teleoperating through a live 3D map you can inspect in VR</p>
+      </div>
+      <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/RmDgk0cmOk8?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=RmDgk0cmOk8&amp;playsinline=1&amp;rel=0&amp;enablejsapi=1" data-yt title="Human-in-the-loop Gaussian splatting teleoperation video" loading="lazy" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="mc">
+        <p><strong>Motivation.</strong> Live camera streams give teleoperators tunnel vision and weak depth cues.</p>
+        <p><strong>Contribution.</strong> A VR loop that builds a live Gaussian-splatting map from RGB-D and robot motion and lets operators pick safe viewpoints by hand; faster and higher-fidelity than an autonomous planner, tested on a robot arm and an aerial manipulator.</p>
+      </div>
+      <p class="note"><strong>Follow-up (KHC 2026).</strong> Added passivity-based bilateral haptic control, completing a 5 mm-tolerance peg-in-hole on an aerial manipulator.</p>
+      <p><strong>My role:</strong> Implemented the MuJoCo-based simulation of the remote robot and IK-based motion planning; wrote part of the paper.</p>
+      <div class="paperlinks">
+        <a href="https://doi.org/10.1109/LRA.2025.3632755">Paper</a>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+<section class="stack" aria-labelledby="ip">
+  <h2 id="ip">Patents, software and technology transfer</h2>
+  <div>
+    <div class="ip-row">
+      <p class="ip-type">Patent (Korea)</p>
+      <div class="ip-main">
+        <p class="ip-title">Multi-user swarm robot control system and method using hand gestures</p>
+        <p class="ip-detail">Dongjun Lee, <strong>Jinuk Heo</strong>, Hyunreal Park, Cheongkee Jung, Eunhak Lee. Reg. 10-2886038 (Appl. 10-2023-0194923, filed Dec 2023)</p>
+      </div>
+      <p class="ip-date">Nov 2025</p>
+    </div>
+    <div class="ip-row">
+      <p class="ip-type">Patent (Korea)</p>
+      <div class="ip-main">
+        <p class="ip-title">Hand motion tracking system and method using tightly coupled fusion of visual and inertial sensors</p>
+        <p class="ip-detail">Dongjun Lee, Yongseok Lee, <strong>Jinuk Heo</strong>, Somang Lee, Youngseon Lee. Reg. 10-2456872 (Appl. 10-2021-0192663, filed Dec 2021)</p>
+      </div>
+      <p class="ip-date">Oct 2022</p>
+    </div>
+    <div class="ip-row">
+      <p class="ip-type">Patent application (pending)</p>
+      <div class="ip-main">
+        <p class="ip-title">Electronic device for outputting haptic feedback and method thereof</p>
+        <p class="ip-detail">Jaehwan Lee, Hyunchul Woo, Hyungjoo Yim, Dongjun Lee, Youngseon Lee, Seunghwan Ko, Hyunsu Kim, Cheolmin Lee, <strong>Jinuk Heo</strong>. Joint application by Samsung Electronics and Seoul National University. KR Pub. 10-2024-0068492 (Appl. 10-2022-0154009); PCT/KR2023/015890; US Pub. 2025/0265912 A1 (Appl. 19/197,229). <a href="https://doi.org/10.8080/1020220154009">KR</a> · <a href="https://patents.google.com/patent/US20250265912A1/en" rel="noreferrer">US</a></p>
+      </div>
+      <p class="ip-date">Filed Nov 2022</p>
+    </div>
+    <div class="ip-row">
+      <p class="ip-type">Registered software</p>
+      <div class="ip-main">
+        <p class="ip-title">Software library for hand motion tracking using tightly coupled visual–inertial fusion</p>
+        <p class="ip-detail">Korea Copyright Commission, C-2022-054259</p>
+      </div>
+      <p class="ip-date">Dec 2022</p>
+    </div>
+    <div class="ip-row">
+      <p class="ip-type">Registered software</p>
+      <div class="ip-main">
+        <p class="ip-title">Driver program for a piezoelectric-actuator-based haptic device</p>
+        <p class="ip-detail">Korea Copyright Commission, C-2021-056390</p>
+      </div>
+      <p class="ip-date">Dec 2021</p>
+    </div>
+    <div class="ip-row">
+      <p class="ip-type">Technology transfer</p>
+      <div class="ip-main">
+        <p class="ip-title">Software license for a visual–inertial state estimation library</p>
+        <p class="ip-detail">Seoul National University to <a href="https://quester.kr/">Quester Inc.</a> (C-2022-040334)</p>
+      </div>
+      <p class="ip-date">Dec 2022</p>
+    </div>
+    <div class="ip-row">
+      <p class="ip-type">Technology transfer</p>
+      <div class="ip-main">
+        <p class="ip-title">Non-exclusive license of the VIST hand-tracking patent and implementation know-how</p>
+        <p class="ip-detail">Seoul National University to <a href="https://quester.kr/">Quester Inc.</a></p>
+      </div>
+      <p class="ip-date">Oct 2023</p>
+    </div>
+  </div>
+</section>
+
+<section class="stack" aria-labelledby="education">
+  <h2 id="education">Education</h2>
+  <div>
+    <div class="ip-row">
+      <p class="ip-type">Ph.D. (integrated M.S./Ph.D.)</p>
+      <div class="ip-main">
+        <p class="ip-title">Mechanical Engineering, Seoul National University</p>
+        <p class="ip-detail">Advisor: Prof. Dongjun Lee.</p>
+      </div>
+      <p class="ip-date">2019 – present</p>
+    </div>
+    <div class="ip-row">
+      <p class="ip-type">B.S.</p>
+      <div class="ip-main">
+        <p class="ip-title">Mechanical and Aerospace Engineering (Mechanical Engineering major), Seoul National University</p>
+        <p class="ip-detail">Summa cum laude.</p>
+      </div>
+      <p class="ip-date">2016 – 2019</p>
+    </div>
+  </div>
+</section>
+
+<section class="stack" aria-labelledby="skills">
+  <h2 id="skills">Skills</h2>
+  <dl class="skills">
+    <dt>Programming</dt>
+    <dd>C++, Python, C#, MATLAB</dd>
+    <dt>Tools</dt>
+    <dd>ROS 2, MuJoCo, Unity, Unreal Engine (basic)</dd>
+    <dt>Teleoperation and haptics</dt>
+    <dd>Bilateral teleoperation (4-channel, passivity-based), robot-arm force feedback, tactile feedback (vibrotactile, thermal)</dd>
+    <dt>Robot control</dt>
+    <dd>Real-time control of Franka FR3/Panda via FCI, inverse-kinematics-based motion planning, force/torque sensing</dd>
+    <dt>Simulation</dt>
+    <dd>Contact-rich rigid-body dynamics simulation</dd>
+    <dt>Estimation</dt>
+    <dd>Hand tracking with visual-inertial sensor fusion</dd>
+  </dl>
+</section>
+
+<section class="stack" aria-labelledby="pubs">
+  <h2 id="pubs">Publications and demos</h2>
+
+  <div class="pub-group">
+    <h3>Journal articles</h3>
+    <ul class="pubs">
+      <li><strong>Jinuk Heo</strong>, Hyunsu Kim, Eunhak Lee, Youngseon Lee, Hyunreal Park, Seok-Haeng Huh, Seongjun Lee, Yongseok Lee, Dongjun Lee. “Finger-based 3D human-swarm interaction interface: Design and human-subject evaluation.” <em>Expert Systems with Applications</em>, vol. 323, 132234, 2026. <span class="links-inline"><a href="https://doi.org/10.1016/j.eswa.2026.132234">DOI</a><a href="https://www.youtube.com/watch?v=YxUzck9DLKs">Video</a></span></li>
+      <li>Yongseok Lee, Hyunsu Kim, Harim Ji, <strong>Jinuk Heo</strong>, Youngseon Lee, Jiseock Kang, Jeongseob Lee, Dongjun Lee. “Human-in-the-loop Gaussian splatting for robotic teleoperation.” <em>IEEE Robotics and Automation Letters</em>, vol. 11, no. 1, pp. 105–112, 2026. <span class="links-inline"><a href="https://doi.org/10.1109/LRA.2025.3632755">DOI</a><a href="https://www.youtube.com/watch?v=RmDgk0cmOk8">Video</a></span></li>
+      <li><strong>Jinuk Heo</strong>, Hyelim Choi, Yongseok Lee, Hyunsu Kim, Harim Ji, Hyunreal Park, Youngseon Lee, Cheongkee Jung, Hai-Nguyen Nguyen, Dongjun Lee. “Hand Tracking: Survey.” <em>International Journal of Control, Automation and Systems</em>, vol. 22, no. 6, pp. 1761–1778, 2024. Invited paper. <span class="links-inline"><a href="https://doi.org/10.1007/s12555-024-0298-1">DOI</a></span></li>
+      <li>Yongseok Lee, Wonkyung Do, Hanbyeol Yoon, <strong>Jinuk Heo</strong>, WonHa Lee, Dongjun Lee. “Visual-inertial hand motion tracking with robustness against occlusion, interference, and contact.” <em>Science Robotics</em>, vol. 6, no. 58, eabe1315, 2021. <span class="links-inline"><a href="https://doi.org/10.1126/scirobotics.abe1315">DOI</a><a href="https://www.youtube.com/watch?v=y9T0Uts-DuI">Video</a></span></li>
+    </ul>
+  </div>
+
+  <div class="pub-group">
+    <h3>Conference papers</h3>
+    <ul class="pubs">
+      <li>Harim Ji, Hyunsu Kim, Jeongmin Lee, Somang Lee, Seoki An, <strong>Jinuk Heo</strong>, Youngseon Lee, Yongseok Lee, Dongjun Lee. “GPU-accelerated subsystem-based ADMM for large-scale interactive simulation.” <em>IEEE International Conference on Robotics and Automation (ICRA)</em>, pp. 13868–13874, 2025. <span class="links-inline"><a href="https://doi.org/10.1109/ICRA55743.2025.11128665">DOI</a><a href="https://www.youtube.com/watch?v=6dXjwOY-fF8">Video</a></span></li>
+      <li>Sangyul Park, Yonghan Lee, <strong>Jinuk Heo</strong>, Dongjun Lee. “Pose and posture estimation of aerial skeleton systems for outdoor flying.” <em>IEEE International Conference on Robotics and Automation (ICRA)</em>, pp. 704–710, 2019. <span class="links-inline"><a href="https://doi.org/10.1109/ICRA.2019.8794080">DOI</a><a href="https://www.youtube.com/watch?v=knYpMYhF2tQ">Video 1</a><a href="https://www.youtube.com/watch?v=VETL-fqbYik">Video 2</a></span></li>
+    </ul>
+  </div>
+
+  <div class="pub-group">
+    <h3>Workshop papers and work in progress</h3>
+    <ul class="pubs">
+      <li>Harim Ji, Hyelim Choi, <strong>Jinuk Heo</strong>, Youngseon Lee, Hyunsu Kim, Somang Lee, Dongjun Lee. “Robust and accurate system for hand pose data acquisition of dexterous manipulation.” <em>Robotics: Science and Systems (RSS) Workshop</em>, 2023.</li>
+      <li><strong>Jinuk Heo</strong>, Yongseok Lee, Dongjun Lee. “Preliminary implementation of human-swarm-interaction methodology with hand-gesture.” Presented at <em>International Conference on Intelligent Autonomous Systems (IAS-18)</em>, 2023.</li>
+      <li><strong>Jinuk Heo</strong>, Minji Lee, Jeongmin Lee, Youngseon Lee, Somang Lee, Dongjun Lee. “Object manipulation in virtual reality using hands: Systems and implementation.” <em>International Conference on Ubiquitous Robots (UR)</em>, work-in-progress paper, 2022. Also presented in Korean at the <em>Korea Robotics Society Annual Conference (KRoC)</em>, 2022. <span class="links-inline"><a href="papers/heo2022-ur-wip-vr-hand-manipulation.pdf">PDF</a></span></li>
+    </ul>
+  </div>
+
+  <div class="pub-group">
+    <h3>Demonstrations</h3>
+    <ul class="pubs">
+      <li>Hyelim Choi, Youngseon Lee, Harim Ji, Hyunsu Kim, <strong>Jinuk Heo</strong>, Hyunreal Park, Somang Lee, Minji Lee, Jeongmin Lee, Dongjun Lee. “Interactive simulation of dexterous manipulation with hand tracking: Robot hand bolting and multi-user collaborative simulation in VR.” <em>ICRA 2024 EXPO</em>, Yokohama. <span class="links-inline"><a href="media/icra24-expo.mp4">Video</a></span></li>
+      <li>VIST haptic glove for hand-object interaction in VR. <em>CES 2022</em>, Las Vegas. Demo team: <strong>Jinuk Heo</strong>, Jeongmin Lee, Minji Lee, Youngseon Lee. <span class="links-inline"><a href="https://www.aitimes.com/news/articleView.html?idxno=142970">News coverage (Korean)</a></span></li>
+    </ul>
+  </div>
+
+  <div class="pub-group">
+    <h3>Domestic conferences (in Korean)</h3>
+    <ul class="pubs">
+      <li>Hyunsu Kim, <strong>Jinuk Heo</strong>, Harim Ji, Yongseok Lee, Dongjun Lee. “An immersive teleoperation framework integrating 3D Gaussian splatting and passivity-based bilateral haptic control.” <em>Korea Haptics Conference (KHC)</em>, 2026.</li>
+      <li>Harim Ji, Yongseok Lee, <strong>Jinuk Heo</strong>, Hyunsu Kim, Dongjun Lee. “GPU-accelerated real-time simulation framework for dexterous robot hand manipulation data.” <em>Korea Haptics Conference (KHC)</em>, 2026. <span class="tag">Live demo</span></li>
+      <li>Youngseon Lee, <strong>Jinuk Heo</strong>, Hyunsu Kim, Minji Lee, Jeongmin Lee, Dongjun Lee. “Interactive simulation framework of robot hand bolting with hand tracking and haptic feedback.” <em>ICROS Annual Conference</em>, 2024. <span class="links-inline"><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11908781">DBpia</a></span></li>
+      <li>Cheongkee Jung, <strong>Jinuk Heo</strong>, Hyunreal Park, Eunhak Lee, Dongjun Lee. “Virtual reality-based multi-user command and control system applying hand motion tracking for human-swarm interaction.” <em>KSME Annual Conference</em>, pp. 1404–1408, 2023. <span class="links-inline"><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11709162">DBpia</a></span></li>
+      <li><strong>Jinuk Heo</strong>, Hyunsu Kim, Harim Ji, Hyunreal Park, Hyelim Choi, Somang Lee, Youngseon Lee, Dongjun Lee. “Haptic feedback and a remote distributed simulator for dexterous multi-user tasks” (title translated). <em>Korea Haptics Conference (KHC)</em>, poster, 2023. <span class="tag">Live demo</span> <span class="links-inline"><a href="papers/heo2023-khc-multiuser-poster.pdf">Poster (PDF)</a></span></li>
+      <li><strong>Jinuk Heo</strong>, Youngseon Lee, Hyunsu Kim, Hyelim Choi, Harim Ji, Dongjun Lee. “Development of haptic glove for teleoperation of robotic hand.” <em>ICROS Annual Conference</em>, pp. 379–380, 2023. <span class="links-inline"><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11480358">DBpia</a></span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="stack" aria-labelledby="teaching">
+  <h2 id="teaching">Teaching, mentoring and outreach</h2>
+
+  <div class="pub-group">
+    <h3>Teaching</h3>
+    <ul class="pubs">
+      <li><strong>Course content, K-MOOC</strong>, “Emerging Robot Technologies and Their Applications 2,” Seoul National University, 2024. Prepared the lecture materials and quizzes for the week on haptic metaverse technology, taught by Prof. Dongjun Lee. <span class="links-inline"><a href="https://www.kmooc.kr/view/course/detail/21097">Course page</a></span></li>
+      <li><strong>Lead teaching assistant</strong>, Mechanical System Modeling and Control, Seoul National University, Spring 2021. Taught the TA-led hands-on practice sessions, drafted exam problems and solutions under the instructor’s supervision, and wrote and graded the quizzes.</li>
+      <li><strong>Teaching assistant</strong>, Mechanical Engineering Laboratory 1 (mechatronics module), Seoul National University, Fall 2020. Taught the TA-led mechatronics lab sessions, drafted exam problems and solutions under the instructor’s supervision, and wrote and graded the quizzes.</li>
+    </ul>
+  </div>
+
+  <div class="pub-group">
+    <h3>Mentoring</h3>
+    <ul class="pubs">
+      <li><strong>Undergraduate thesis mentor</strong>, Seoul National University, 2024. Mentored one student over two semesters.</li>
+      <li><strong>Research mentor</strong>, Undergraduate Research Opportunities Program (UROP), a for-credit research internship for undergraduates, Seoul National University, 2022–2023. Mentored four students over four semesters.</li>
+    </ul>
+  </div>
+
+  <div class="pub-group">
+    <h3>Outreach</h3>
+    <ul class="pubs">
+      <li>Featured on <strong>Arirang TV</strong>, 2021, demonstrating the VIST hand-tracking system from our Science Robotics work. <span class="links-inline"><a href="https://www.youtube.com/watch?v=lTWPiNJevWI">Video</a></span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>Contact: <a href="mailto:jinukheo@snu.ac.kr">jinukheo@snu.ac.kr</a></p>
+  <p>Last updated November 2026</p>
+</footer>
+
+</main>
+<script>
+  // Autoplay every demo video, muted. To save data and CPU, only the ones on screen keep playing.
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var videos = Array.prototype.slice.call(document.querySelectorAll('video[autoplay]'));
+    var frames = Array.prototype.slice.call(document.querySelectorAll('iframe[data-yt]'));
+
+    function yt(frame, cmd) {
+      try { frame.contentWindow.postMessage(JSON.stringify({ event: 'command', func: cmd, args: [] }), '*'); } catch (e) {}
+    }
+
+    if (reduce) {
+      // Reduced motion: nothing starts on its own; viewers press play.
+      videos.forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
+      frames.forEach(function (f) { f.src = f.src.replace('autoplay=1', 'autoplay=0'); });
+      return;
+    }
+    if (!('IntersectionObserver' in window)) return;
+
+    var visible = new WeakMap();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var el = e.target;
+        visible.set(el, e.isIntersecting);
+        if (el.tagName === 'VIDEO') {
+          if (e.isIntersecting) { var p = el.play(); if (p && p.catch) p.catch(function () {}); }
+          else el.pause();
+        } else {
+          yt(el, e.isIntersecting ? 'playVideo' : 'pauseVideo');
+        }
+      });
+    }, { threshold: 0.25 });
+
+    videos.forEach(function (v) { io.observe(v); });
+    frames.forEach(function (f) {
+      io.observe(f);
+      // A lazy embed can load (and autoplay) just before it scrolls into view; settle it once the player is ready.
+      f.addEventListener('load', function () {
+        setTimeout(function () { yt(f, visible.get(f) ? 'playVideo' : 'pauseVideo'); }, 1200);
+      });
+    });
+  })();
+</script>
+</body>
+</html>
